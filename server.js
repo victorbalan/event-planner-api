@@ -13,7 +13,11 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(passport.initialize());
 
-mongoose.connect('mongodb://localhost:27017/event-planner');
+if(process.env.ENV==='dev'){
+	mongoose.connect('mongodb://localhost:27017/event-planner');
+}else {
+	mongoose.connect('mongodb://admin:admin@ds019472.mlab.com:19472/event-planner');
+}
 
 var router = express.Router();
 require('./routes')(router);
