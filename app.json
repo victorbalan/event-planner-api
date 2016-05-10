@@ -1,0 +1,6 @@
+{
+  "name": "Event planner",
+  "description": "Event planner",
+  "keywords": ["node", "express"],
+  "image": "heroku/nodejs"
+}
