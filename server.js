@@ -2,6 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var passport = require('passport');
+var cors = require('cors');
 
 var app = express();
 
@@ -12,6 +13,7 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 app.use(passport.initialize());
+app.use(cors());
 
 if(process.env.ENV==='dev'){
 	mongoose.connect('mongodb://localhost:27017/event-planner');
