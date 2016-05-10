@@ -9,7 +9,7 @@ module.exports = function(User){
 	}
 
 	function getAll(req, res) {
-		User.find(function(err, users){
+		User.find().select('_id username').exec(function(err, users){
 			if(err) { res.send(err).status(500); }
 			res.json(users);
 		});
