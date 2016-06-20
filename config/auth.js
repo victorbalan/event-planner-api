@@ -1,5 +1,5 @@
 var passport = require('passport');
-var BearerStrategy = require('passport-http-bearer').Strategy
+var BearerStrategy = require('passport-http-bearer').Strategy;
 
 module.exports = function(User, Client, Token){
 	passport.use(new BearerStrategy(
@@ -28,4 +28,4 @@ module.exports = function(User, Client, Token){
 		isAuthenticated: passport.authenticate(['bearer'], {session: false}),
 		isAdmin: passport.authenticate(['bearer-admin'], {session: false})
 	}
-}
+};
